@@ -9,10 +9,10 @@ export default function Navbar() {
   const pathname = usePathname()
 
   const navItems = [
-    { href: "/pages/class", label: "Kelas Kajian", icon: BookOpen },
-    { href: "/pages/kajian", label: "Kajian", icon: Users },
-    { href: "/pages/donasi", label: "Donasi", icon: Heart },
-    { href: "/pages/profile", label: "Profile", icon: User },
+    { href: "/class", label: "Kelas Kajian", icon: BookOpen },
+    { href: "/kajian", label: "Kajian", icon: Users },
+    { href: "/donasi", label: "Donasi", icon: Heart },
+    { href: "/profile", label: "Profile", icon: User },
   ]
 
   return (

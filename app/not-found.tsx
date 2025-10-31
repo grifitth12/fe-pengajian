@@ -9,5 +9,5 @@ export default function NotFound() {
                 Go to Home
             </Link>
         </div>
-    );
+    )
 }

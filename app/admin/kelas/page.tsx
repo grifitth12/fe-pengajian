@@ -2,33 +2,29 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Button } from "@/components/ui/button"
 
 const data = [
-  { id: "DN-9001", campaign: "Operasional Masjid", nominal: 250000, donatur: "Anonim", status: "Masuk" },
-  { id: "DN-9002", campaign: "Beasiswa Santri", nominal: 500000, donatur: "Aisyah", status: "Masuk" },
-  { id: "DN-9003", campaign: "Santunan Yatim", nominal: 150000, donatur: "Budi", status: "Pending" },
+  { id: "KL-101", nama: "Kelas Tahsin Dasar", pengajar: "Ust. Sulaiman", peserta: 35, status: "Berjalan" },
+  { id: "KL-102", nama: "Kelas Bahasa Arab", pengajar: "Ust. Hafidz", peserta: 22, status: "Pendaftaran" },
+  { id: "KL-103", nama: "Kelas Hadits", pengajar: "Ust. Zaki", peserta: 18, status: "Selesai" },
 ]
 
-function formatRupiah(n: number) {
-  return new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR" }).format(n)
-}
-
-export default function ManageDonasiPage() {
+export default function ManageKelasPage() {
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-semibold tracking-tight">Manage Donasi</h1>
-          <p className="text-sm text-muted-foreground">Kelola donasi yang masuk.</p>
+          <h1 className="text-2xl font-semibold tracking-tight">Manage Kelas</h1>
+          <p className="text-sm text-muted-foreground">Kelola daftar kelas.</p>
         </div>
-        <Button>Tambah Donasi</Button>
+        <Button>Tambah Kelas</Button>
       </div>
       <div className="rounded-md border">
         <Table>
           <TableHeader>
             <TableRow>
               <TableHead>ID</TableHead>
-              <TableHead>Campaign</TableHead>
-              <TableHead>Nominal</TableHead>
-              <TableHead>Donatur</TableHead>
+              <TableHead>Nama Kelas</TableHead>
+              <TableHead>Pengajar</TableHead>
+              <TableHead>Peserta</TableHead>
               <TableHead>Status</TableHead>
               <TableHead className="text-right">Aksi</TableHead>
             </TableRow>
@@ -37,12 +33,12 @@ export default function ManageDonasiPage() {
             {data.map((row) => (
               <TableRow key={row.id}>
                 <TableCell className="font-medium">{row.id}</TableCell>
-                <TableCell>{row.campaign}</TableCell>
-                <TableCell>{formatRupiah(row.nominal)}</TableCell>
-                <TableCell>{row.donatur}</TableCell>
+                <TableCell>{row.nama}</TableCell>
+                <TableCell>{row.pengajar}</TableCell>
+                <TableCell>{row.peserta}</TableCell>
                 <TableCell>{row.status}</TableCell>
                 <TableCell className="text-right space-x-2">
-                  <Button variant="ghost" size="sm">Detail</Button>
+                  <Button variant="ghost" size="sm">Edit</Button>
                   <Button variant="destructive" size="sm">Hapus</Button>
                 </TableCell>
               </TableRow>
