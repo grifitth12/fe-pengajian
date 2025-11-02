@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 import { Geist } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
-import Navbar from "@/app/components/navbar"
+import ConditionalNavbar from "@/app/components/conditional-navbar"
 
 const _geist = Geist({ subsets: ["latin"] })
 
@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="id">
       <body className={`${_geist.className} font-sans antialiased`}>
-        <Navbar />
+        <ConditionalNavbar />
         <main className="min-h-screen">{children}</main>
         <Analytics />
       </body>
